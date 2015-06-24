@@ -60,7 +60,7 @@ loop do
   end
 
   computer_choice = CHOICES.sample
-    puts "    You chose #{player_choice.capitalize}. \n    The computer chose #{computer_choice.capitalize}."
+  puts "    You chose #{player_choice.capitalize}. \n    The computer chose #{computer_choice.capitalize}."
 
   if player_choice == computer_choice
     puts "It's a tie!"
@@ -74,7 +74,7 @@ loop do
     puts "**You lost!**"
   end
 
-    puts "Would you like to play again? (yes/no)"
-    break if gets.chomp.downcase != 'yes'
+  puts "Would you like to play again? (yes/no)"
+  break if gets.chomp.downcase != 'yes'
 
 end
