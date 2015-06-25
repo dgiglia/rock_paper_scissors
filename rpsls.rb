@@ -1,11 +1,9 @@
 CHOICES = ['rock', 'paper', 'scissors', 'lizard', 'spock']
-
 ROCK = {'lizard' => "Rock crushes lizard.", 'scissors' => "Rock crushes scissors."}
 PAPER = {'rock' => "Paper covers rock.", 'spock' => "Paper disproves Spock."}
 SCISSORS = {'paper' => "Scissors cut paper.", 'lizard' => "Scissors decapitate Lizard."}
 LIZARD = {'paper' => "Lizard eats Paper.", 'spock' => "Lizard poisons Spock."}
 SPOCK = {'rock' => "Spock vaporizes Rock.", 'scissors' => "Spock smashes Scissors."}
-
 
 def compare_choices(*choices)
   winner = nil
