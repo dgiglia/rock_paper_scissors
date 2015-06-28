@@ -8,36 +8,13 @@ SPOCK = {'rock' => "Spock vaporizes Rock.", 'scissors' => "Spock smashes Scissor
 def compare_choices(*choices)
   winner = nil
   choices.each_with_index do |choice, index|
-    case choice
-    when 'rock' 
-      if ROCK.has_key?(choices[index-1])
-        puts ROCK[choices[index-1]] 
-        winner = 'rock'
-      end
-    when 'scissors' 
-      if SCISSORS.has_key?(choices[index-1])
-        puts SCISSORS[choices[index-1]] 
-        winner = 'scissors'
-      end
-    when 'paper' 
-      if PAPER.has_key?(choices[index-1])
-        puts PAPER[choices[index-1]]
-        winner = 'paper'
-      end
-    when 'lizard' 
-      if LIZARD.has_key?(choices[index-1])
-        puts LIZARD[choices[index-1]]
-        winner = 'lizard'
-      end
-    when 'spock' 
-      if SPOCK.has_key?(choices[index-1])
-        puts SPOCK[choices[index-1]]
-        winner = 'spock'
-      end
+    winning_message = Kernel.const_get(choice.upcase)[choices[index-1]]
+    if winning_message
+      puts winning_message
+      winner = choice
     end
-    break if winner != nil
   end
-  winner  
+  winner
 end
     
 puts "Welcome to Rock - Paper - Scissors - Lizard - Spock, the ultimate boredom crushing game." 
